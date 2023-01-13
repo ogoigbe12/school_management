@@ -2,7 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Admin } from 'typeorm/admin.entities';
+import { manage_student } from 'typeorm/manage_students.entities';
 import { AdminModule } from './admin/admin.module';
+import { ManageStudentsModule } from './manage_students/manage_students.module';
 
 @Module({
   imports: [
@@ -14,10 +16,11 @@ import { AdminModule } from './admin/admin.module';
       username: process.env.USER,
       password: process.env.PASSWORD,
       database: process.env.DB,
-      entities: [Admin],
+      entities: [Admin, manage_student],
       synchronize: true,
     }),
     AdminModule,
+    ManageStudentsModule,
   ],
   controllers: [],
   providers: [],

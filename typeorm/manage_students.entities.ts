@@ -1,21 +1,33 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Admin {
+export class manage_student {
   @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @Column()
-  FullName: string;
+  StudentName: string;
 
   @Column()
-  username: string;
+  Email: string;
+
+  @Column('bigint')
+  PhoneNumber: number;
+
+  @Column('date')
+  BirthDate: string;
 
   @Column()
-  email: string;
+  Gender: string;
 
   @Column()
-  password: string;
+  StudentID: number;
+
+  @Column()
+  EntryYear: string;
+
+  @Column()
+  Semester: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: number;
