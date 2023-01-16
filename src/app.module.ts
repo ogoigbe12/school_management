@@ -5,6 +5,8 @@ import { Admin } from 'typeorm/admin.entities';
 import { manage_student } from 'typeorm/manage_students.entities';
 import { AdminModule } from './admin/admin.module';
 import { ManageStudentsModule } from './manage_students/manage_students.module';
+import { FacultyModule } from './faculty/faculty.module';
+import { StudentModule } from './student/student.module';
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { ManageStudentsModule } from './manage_students/manage_students.module';
     }),
     AdminModule,
     ManageStudentsModule,
+    FacultyModule,
+    StudentModule,
   ],
   controllers: [],
   providers: [],
