@@ -5,6 +5,7 @@ import { adminDto } from 'src/admin/dto/admin.dto';
 import { Repository } from 'typeorm';
 import { Admin } from 'typeorm/admin.entities';
 import * as bcrypt from 'bcrypt';
+import { AdminLoginDto } from 'src/admin/dto/login.dto';
 
 @Injectable()
 export class AdminService {
@@ -23,9 +24,9 @@ export class AdminService {
     if (findEamil.length === 0)
       return await this.adminRepository.save(adminDetails);
   }
-  async adminlogin(adminDetails: adminDto) {
+  async adminlogin(adminDetails: AdminLoginDto) {
     const adminLogin = await this.adminRepository.findOneBy({
-      email: adminDetails.email,
+      username: adminDetails.username,
     });
     if (adminLogin) {
       const passwordCheck = await bcrypt.compare(
