@@ -43,7 +43,7 @@ export class FacultyService {
       return { err: 'incorrect password', status: HttpStatus.BAD_REQUEST };
     }
     return {
-      err: 'employee with email not found',
+      err: 'faculty with email not found',
       status: HttpStatus.NOT_FOUND,
     };
   }
