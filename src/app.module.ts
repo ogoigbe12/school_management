@@ -9,6 +9,8 @@ import { FacultyModule } from './faculty/faculty.module';
 import { StudentModule } from './student/student.module';
 import { Faculty } from 'typeorm/faculty.entities';
 import { AccountantModule } from './accountant/accountant.module';
+import { Student } from 'typeorm/student.entities';
+import { Accountant } from 'typeorm/accountant.entities';
 
 @Module({
   imports: [
@@ -20,7 +22,7 @@ import { AccountantModule } from './accountant/accountant.module';
       username: process.env.USER,
       password: process.env.PASSWORD,
       database: process.env.DB,
-      entities: [Admin, manage_student, Faculty],
+      entities: [Admin, manage_student, Faculty, Student, Accountant],
       synchronize: true,
     }),
     AdminModule,
